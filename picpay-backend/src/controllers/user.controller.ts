@@ -7,7 +7,7 @@ export async function createUserController(c: Context) {
   try {
     // Pega body
     const body = await c.req.json()
-
+    
     // Valida dados obrigatórios
     if (!body.name || !body.email || !body.type) {
       return c.json(
@@ -17,6 +17,7 @@ export async function createUserController(c: Context) {
         400
       )
     }
+    
     // Chama service
     const newUser = await userService.createUser({
       name: body.name,

@@ -12,16 +12,18 @@ interface CreateUserInput {
 export class UserService {
   async createUser(data: CreateUserInput) {
     // Validar tipo
-    
     const validTypes = ['common', 'merchant']
     if (!validTypes.includes(data.type)) {
       throw new AppError(`Tipo inválido. Use: ${validTypes.join(' ou ')}`, 400)
     }
+    console.log("Chegou aqui 1");
     // Validar email (verifica se já existe)
     const existingUser = await findUserByEmail(data.email)
+    console.log(existingUser);
     if (existingUser) {
       throw new AppError('Email já cadastrado', 409)
     }
+
     // Validar email formato básico (depois melhora)
     if (!data.email.includes('@')) {
       throw new AppError('Email inválido', 400)

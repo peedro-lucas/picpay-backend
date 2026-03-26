@@ -1,5 +1,5 @@
 import { db } from '../db'
-import { users } from '../db/schema'
+import { users } from '../db/schemas/user.schema'
 import { eq } from 'drizzle-orm'
 
 interface CreateUserInput {
@@ -31,8 +31,7 @@ export async function findUserByEmail(email: string) {
     .from(users)
     .where(eq(users.email, email))
   
-  if (result[0]) {throw new Error('Erro ao criar usuário')
-}
+  
   return result[0]
 }
 
