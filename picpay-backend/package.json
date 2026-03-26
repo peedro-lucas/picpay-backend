@@ -1,0 +1,19 @@
+{
+  "name": "picpay-backend",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@types/pg": "^8.20.0",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "hono": "^4.12.9",
+    "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^25.5.0",
+    "drizzle-kit": "^0.31.10",
+    "ts-node-dev": "^2.0.0"
+  }
+}
