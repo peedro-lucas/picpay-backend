@@ -80,7 +80,7 @@ export class TransferService {
         }
 
       return {
-        message: 'Transferência realizada com sucesso'
+        message: 'Transfer completed successfully'
       }
     })
   }
